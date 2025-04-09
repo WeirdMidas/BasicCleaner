@@ -9,3 +9,8 @@ The script applies the following maintenance after 2min of boot:
 - zipalign every 15 days.
 - vacuum, reindex, analyze and optimize the database every 15 days.
 - synchronize the art, compile the images and do the final cleanup of unused files from the ART.
+
+## WARNING!
+The module also comes with the latest version of the sqlite binary, which is a maintenance that I will do to keep the module up to date. So if you use a module that also does this, I recommend removing it, or not using my module.
+
+Older Androids can also suffer from the updated sqlite, so have your bootloop protection module on hand, in case something goes wrong.
