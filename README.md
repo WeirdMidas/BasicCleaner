@@ -1,7 +1,7 @@
 # BasicCleaner
 A simple module designed to be a maintenance tool for devices that want to last a little longer, but don't want to do manual things to maintain the longevity of the device.
 
-The script applies the following maintenance:
+The script applies the following maintenance after 2min of boot:
 
 - fstrim every 7 days on: system, data, cache, persist, vendor, system_ext and product.
 - clean cache and trash of apps every 7 days.
