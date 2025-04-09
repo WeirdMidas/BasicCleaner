@@ -3,7 +3,7 @@ A simple module designed to be a maintenance tool for devices that want to last 
 
 The script applies the following maintenance:
 
-- fstrim every 7 days on: system, data, cache, persist, vendor, system_ext and product
+- fstrim every 7 days on: system, data, cache, persist, vendor, system_ext and product.
 - clean cache and trash of apps every 7 days.
 - compile all apps in speed-profile every 7 days.
 - zipalign every 15 days.
