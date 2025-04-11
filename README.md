@@ -10,6 +10,8 @@ The script applies the following maintenance after 2min of boot:
 - vacuum, reindex, analyze and optimize the database every 15 days.
 - synchronize the art, compile the images and do the final cleanup of unused files from the ART.
 
+If you want logs, just go to the android folder in the main storage. It will show all the cleanings applied, the time it took between them, etc.
+
 ## WARNING!
 The module also comes with the latest version of the sqlite binary, which is a maintenance that I will do to keep the module up to date. So if you use a module that also does this, I recommend removing it, or not using my module.
 
