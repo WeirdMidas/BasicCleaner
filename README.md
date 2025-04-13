@@ -8,7 +8,7 @@ The script applies the following maintenance after 2min of boot:
 - compile all apps in speed-profile every 7 days.
 - zipalign every 15 days.
 - vacuum, reindex, analyze and optimize the database every 15 days.
-- synchronize the art, compile the images and do the final cleanup of unused files from the ART.
+- synchronize the art, compile the images and do the final cleanup of unused files from the ART every 30 days.
 
 If you want logs, just go to the android folder in the main storage. It will show all the cleanings applied, the time it took between them, etc.
 
