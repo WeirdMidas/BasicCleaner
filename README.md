@@ -28,3 +28,5 @@ The module has now been updated and you can customize the cleaning period for ea
 The module also comes with the latest version of the sqlite binary, which is a maintenance that I will do to keep the module up to date. So if you use a module that also does this, I recommend removing it, or not using my module.
 
 Older Androids can also suffer from the updated sqlite, so have your bootloop protection module on hand, in case something goes wrong.
+
+Another warning: The first time you install the module and in the next cleanings, it will apply the cleaning, so LET THE MODULE DO ITS WORK! DON'T DISTURB IT BY USING YOUR PHONE WHILE IT CLEANS! This prevents the script from doing something wrong and even corrupting one of your applications because of YOU! Anyway, let the module do the cleaning first, it takes almost no time and trust me, it's better because it even maximizes the cleaning.
