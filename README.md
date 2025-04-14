@@ -12,6 +12,8 @@ The script applies the following maintenance after 2min of boot:
 
 If you want logs, just go to the android folder in the main storage. It will show all the cleanings applied, the time it took between them, etc.
 
+And remembering that the times above are for the next cleanings, the module will apply all the cleanings mentioned after installation and after boot and thus, the next ones will be at the time mentioned above. This means that the module will be cleaning the device continuously when it hits the period that was marked (but it can be customized by the user).
+
 ## Customizing the cleaning time
 
 The module has now been updated and you can customize the cleaning period for each task. This is done in the file called "panel_execonfig", which is located in the android folder where the cleaning logs are located. The way to customize it is through seconds, where you will enter the time of the day in seconds (example: 15 days for optimization of compiling apps in speed-profile would give 1296000). It is recommended to NEVER set it to less than 5 days (or even 7 depending) because this can cause "overcleaning", which can affect your system by leaving it so clean that it can generate errors, such as messengers frequently disappearing messages, or even the corruption of the database of some of your applications (if you force the sqlite optimization too much).
