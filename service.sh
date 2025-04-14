@@ -6,7 +6,7 @@ MODDIR=${0%/*}
 sleep 120
 
 # Configuration panel path
-PANEL_FILE="/storage/emulated/0/Android/panel_execonfig"
+PANEL_FILE="/storage/emulated/0/Android/panel_execonfig.txt"
 
 # pre-set configurations
 if [ ! -e $PANEL_FILE ]; then
