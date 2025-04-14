@@ -5,12 +5,25 @@ MODDIR=${0%/*}
 # Wait some time... to apply cleaner script
 sleep 120
 
+# Configuration panel path
+PANEL_FILE="/storage/emulated/0/Android/panel_execonfig"
+
+# pre-set configurations
+if [ ! -e $PANEL_FILE ]; then
+    echo "ZIPALIGN=1296000" > $PANEL_FILE
+    echo "SQLITE=1296000" >> $PANEL_FILE
+    echo "JUNK=604800" >> $PANEL_FILE
+    echo "FSTRIM=604800" >> $PANEL_FILE
+    echo "ART-PROFILE=604800" >> $PANEL_FILE
+    echo "FINALCLEAN=2592000" >> $PANEL_FILE
+fi
+
 #Executed after Glitchify script
 #Log file location
 LOG_FILE=/storage/emulated/0/Android/zipalign.log
 
 #Interval between ZipAlign runs, in seconds, 1296000 = 15 days
-RUN_EVERY=1296000
+RUN_EVERY=$(grep "^ZIPALIGN=" $PANEL_FILE | cut -d'=' -f2)
 
 # Get the last modify date of the Log file, if the file does not exist, set value to 0
 if [ -e $LOG_FILE ]; then
@@ -58,7 +71,7 @@ fi
 LOG_FILE=/storage/emulated/0/Android/sq.log
 
 #Interval between SQLite3 runs, in seconds, 1296000=15 days
-RUN_EVERY=1296000
+RUN_EVERY=$(grep "^SQLITE=" $PANEL_FILE | cut -d'=' -f2)
 
 # Get the last modify date of the Log file, if the file does not exist, set value to 0
 if [ -e $LOG_FILE ]; then
@@ -126,7 +139,7 @@ fi;
 LOG_FILE=/storage/emulated/0/Android/junk.log
 
 #Interval between SQLite3 runs, in seconds, 604800 = 7 days
-RUN_EVERY=604800
+RUN_EVERY=$(grep "^JUNK=" $PANEL_FILE | cut -d'=' -f2)
 
 # Get the last modify date of the Log file, if the file does not exist, set value to 0
 if [ -e $LOG_FILE ]; then
@@ -242,7 +255,7 @@ fi;
 LOG_FILE=/storage/emulated/0/Android/FSTRIM.log
 
 #Interval between FSTRIM runs, in seconds, 604800 = 7 days
-RUN_EVERY=604800
+RUN_EVERY=$(grep "^FSTRIM=" $PANEL_FILE | cut -d'=' -f2)
 
 # Get the last modify date of the Log file, if the file does not exist, set value to 0
 if [ -e $LOG_FILE ]; then
@@ -285,7 +298,7 @@ fi;
 LOG_FILE=/storage/emulated/0/Android/AppComp.log
 
 #Interval between FSTRIM runs, in seconds, 604800 = 7 days
-RUN_EVERY=604800
+RUN_EVERY=$(grep "^ART-PROFILE=" $PANEL_FILE | cut -d'=' -f2)
 
 # Get the last modify date of the Log file, if the file does not exist, set value to 0
 if [ -e $LOG_FILE ]; then
@@ -325,7 +338,7 @@ fi;
 LOG_FILE=/storage/emulated/0/Android/cleanART.log
 
 #Interval between FSTRIM runs, in seconds, 2592000 = 30 days
-RUN_EVERY=2592000
+RUN_EVERY=$(grep "^FINALCLEAN=" $PANEL_FILE | cut -d'=' -f2)
 
 # Get the last modify date of the Log file, if the file does not exist, set value to 0
 if [ -e $LOG_FILE ]; then
