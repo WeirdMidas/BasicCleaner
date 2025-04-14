@@ -29,4 +29,4 @@ The module also comes with the latest version of the sqlite binary, which is a m
 
 Older Androids can also suffer from the updated sqlite, so have your bootloop protection module on hand, in case something goes wrong.
 
-Another warning: The first time you install the module and in the next cleanings, it will apply the cleaning, so LET THE MODULE DO ITS WORK! DON'T DISTURB IT BY USING YOUR PHONE WHILE IT CLEANS! This prevents the script from doing something wrong and even corrupting one of your applications because of YOU! Anyway, let the module do the cleaning first, it takes almost no time and trust me, it's better because it even maximizes the cleaning.
+Another warning: The first time you install the module and in the next cleanings LET THE MODULE DO ITS WORK! DON'T DISTURB IT BY USING YOUR PHONE WHILE IT CLEANS! This prevents the script from doing something wrong and even corrupting one of your applications because of YOU! Anyway, let the module do the cleaning first, it takes almost no time and trust me, it's better because it even maximizes the cleaning.
