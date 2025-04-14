@@ -16,6 +16,14 @@ If you want logs, just go to the android folder in the main storage. It will sho
 
 The module has now been updated and you can customize the cleaning period for each task. This is done in the file called "panel_execonfig", which is located in the android folder where the cleaning logs are located. The way to customize it is through seconds, where you will enter the time of the day in seconds (example: 15 days for optimization of compiling apps in speed-profile would give 1296000). It is recommended to NEVER set it to less than 5 days (or even 7 depending) because this can cause "overcleaning", which can affect your system by leaving it so clean that it can generate errors, such as messengers frequently disappearing messages, or even the corruption of the database of some of your applications (if you force the sqlite optimization too much).
 
+- Default Values ​​(And their Meanings)
+  - ZIPALIGN=1296000 (Zipalign)
+  - SQLITE=1296000 (Database)
+  - JUNK=604800 (Cache and Junk of apps)
+  - FSTRIM=604800 (Fstrim)
+  - ART-PROFILE=604800 (Speed-profile for user apps)
+  - FINALCLEAN=2592000 (Sincronyze, compile the XML images and Clean of unused files from ART)
+
 ## WARNING!
 The module also comes with the latest version of the sqlite binary, which is a maintenance that I will do to keep the module up to date. So if you use a module that also does this, I recommend removing it, or not using my module.
 
