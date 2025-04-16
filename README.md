@@ -12,7 +12,7 @@ The script applies the following maintenance after 2min of boot:
 
 If you want logs, just go to the android folder in the main storage. It will show all the cleanings applied, the time it took between them, etc.
 
-And remembering that the times above are for the next cleanings, the module will apply all the cleanings mentioned after installation and after boot and thus, the next ones will be at the time mentioned above. This means that the module will be cleaning the device continuously when it hits the period that was marked (but it can be customized by the user).
+And remembering that the times above are for the next cleanings, the module will apply all the cleanings mentioned after boot after installation and thus, the next ones will be at the time mentioned above. This means that the module will be cleaning the device continuously when it hits the period that was marked (but it can be customized by the user).
 
 ## Customizing the cleaning time
 
