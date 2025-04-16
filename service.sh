@@ -18,8 +18,8 @@ if [ ! -e $PANEL_FILE ]; then
     echo "FINALCLEAN=2592000" >> $PANEL_FILE
 fi
 
-#Executed after Glitchify script
-#Log file location
+# Zipalign section
+# Log file location
 LOG_FILE=/storage/emulated/0/Android/zipalign.log
 
 #Interval between ZipAlign runs, in seconds, 1296000 = 15 days
@@ -67,6 +67,7 @@ then
 fi
 #----------------------------------------------------------------------------------------------------------------------------
 
+# SQLITE sectipn
 # Log file location
 LOG_FILE=/storage/emulated/0/Android/sq.log
 
@@ -134,11 +135,12 @@ then
     echo "SQLite database VACUUM, REINDEX, ANALYZE, and OPTIMIZE  finished at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG_FILE;
 fi;
 #-----------------------------------------------------------------------------------
+
 # Junk Cleaner
-#
+# Log file location
 LOG_FILE=/storage/emulated/0/Android/junk.log
 
-#Interval between SQLite3 runs, in seconds, 604800 = 7 days
+#Interval between Junk runs, in seconds, 604800 = 7 days
 RUN_EVERY=$(grep "^JUNK=" $PANEL_FILE | cut -d'=' -f2)
 
 # Get the last modify date of the Log file, if the file does not exist, set value to 0
@@ -171,10 +173,9 @@ then
     rm -f /cache/recovery/*
     rm -f /data/*.log
     rm -f /data/*.txt
-    rm -f /data/anr/*.log
-    rm -f /data/anr/*.txt
-    rm -f /data/backup/pending/*.tmp
-    rm -f /data/cache/*.*
+    rm -f /data/anr/*
+    rm -f /data/backup/pending/*
+    rm -f /data/cache/*
     rm -f /data/dalvik-cache/*.apk
     rm -f /data/dalvik-cache/*.tmp
     rm -f /data/dalvik-cache/*.log
@@ -186,23 +187,21 @@ then
     rm -f /data/local/*.apk
     rm -f /data/local/*.log
     rm -f /data/local/*.txt
-    rm -f /data/local/tmp/*.log
-    rm -f /data/local/tmp/*.txt
+    rm -f /data/local/tmp/*
     rm -f /data/last_alog/*.log
     rm -f /data/last_alog/*.txt
     rm -f /data/last_kmsg/*.log
     rm -f /data/last_kmsg/*.txt
     rm -f /data/mlog/*
-    rm -f /data/tombstones/*.log
-    rm -f /data/tombstones/*.txt
+    rm -f /data/tombstones/*
     rm -f /data/system/*.log
     rm -f /data/system/*.txt
-    rm -f /data/system/dropbox/*.log
-    rm -f /data/system/dropbox/*.txt
+    rm -f /data/system/dropbox/*
     rm -f /data/system/usagestats/*.log
     rm -f /data/system/usagestats/*.txt
-    rm -f /data/vendor/wlan_logs/*
     rm -f /data/system/shared_prefs/*
+    rm -f /data/vendor/wlan_logs/*
+    rm -f /data/vendor/charge_logger/*
     rm -f /data/media/0/LOST.DIR
     rm -f /data/media/0/found000
     rm -f /data/media/0/LazyList
@@ -220,6 +219,9 @@ then
     rm -f /data/media/0/duilite
     rm -f /data/media/0/DkMiBrowserDemo
     rm -f /data/media/0/.xlDownload
+    rm -f /data/media/0/Android/data/*/cache/*
+    rm -f /data/data/com.whatsapp/files/Logs/whatsapp.log
+    rm -f /data/data/com.myinsta.android/app_analytics/*
     rm -f /data/*/*/shared_prefs/com.crashlytics.prefs.xml
     rm -f /data/*/*/shared_prefs/com.google.android.gms.measurement.prefs.xml
     rm -f /data/*/*/shared_prefs/com.google.android.gms.analytics.prefs.xml
@@ -228,18 +230,6 @@ then
     rm -f /data/*/*/shared_prefs/FBAdPrefs.xml
     rm -f /data/*/*/shared_prefs/crash_report.xml
     rm -f /data/*/*/shared_prefs/analyticsprefs.xml
-    rm -f /data/system/dropbox/*
-    rm -f /data/local/tmp/*
-    rm -f /data/vendor/charge_logger/*
-    rm -f /data/anr/*
-    rm -f /data/data/*/cache
-    rm -f /data/user/0/*/cache
-    rm -f /data/user_de/0/*/cache
-    rm -f /data/tombstones/*
-    rm -f /data/backup/pending/*
-    rm -f /data/media/0/Android/data/*/cache/*
-    rm -f /data/data/com.whatsapp/files/Logs/whatsapp.log
-    rm -f /data/data/com.myinsta.android/app_analytics/*
 	
 	for dir in `find /data/data -type d -iname "*cache*"`; do
 	find "$dir" -type f -delete
@@ -297,7 +287,7 @@ fi;
 # Log file location
 LOG_FILE=/storage/emulated/0/Android/AppComp.log
 
-#Interval between FSTRIM runs, in seconds, 604800 = 7 days
+#Interval between compilation runs, in seconds, 604800 = 7 days
 RUN_EVERY=$(grep "^ART-PROFILE=" $PANEL_FILE | cut -d'=' -f2)
 
 # Get the last modify date of the Log file, if the file does not exist, set value to 0
@@ -337,7 +327,7 @@ fi;
 # Log file location
 LOG_FILE=/storage/emulated/0/Android/cleanART.log
 
-#Interval between FSTRIM runs, in seconds, 2592000 = 30 days
+#Interval between final cleaning runs, in seconds, 2592000 = 30 days
 RUN_EVERY=$(grep "^FINALCLEAN=" $PANEL_FILE | cut -d'=' -f2)
 
 # Get the last modify date of the Log file, if the file does not exist, set value to 0
