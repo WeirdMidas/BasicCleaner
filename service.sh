@@ -356,6 +356,7 @@ then
 	pm reconcile-secondary-dex-files -a
     pm compile --compile-layouts -a
 	pm art cleanup
+	cmd package bg-dexopt-job 
 	
 	echo "ART Cleaning finished at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG_FILE;
 	echo "------------------------------------------------" | tee -a $LOG_FILE;
