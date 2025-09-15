@@ -17,7 +17,7 @@ And remembering that the times above are for the next cleanings, the module will
 
 ## Customizing the cleaning time
 
-The module has now been updated and you can customize the cleaning period for each task. This is done in the file called "panel_execonfig", which is located in the android folder where the cleaning logs are located. The way to customize it is through seconds, where you will enter the time of the day in seconds (example: 15 days for optimization of compiling apps in speed-profile would give 1296000). It is recommended to NEVER set it to less than 5 days (or even 7 depending) because this can cause "overcleaning", which can affect your system by leaving it so clean that it can generate errors, such as messengers frequently disappearing messages, or even the corruption of the database of some of your applications (if you force the sqlite optimization too much).
+The module has now been updated and you can customize the cleaning period for each task. This is done in the file called "panel_cleancfg.txt", which is located in the android folder where the cleaning logs are located. The way to customize it is through seconds, where you will enter the time of the day in seconds (example: 15 days for optimization of final clean would give 1296000). It is recommended to NEVER set it to less than 5 days (or even 7 depending) because this can cause "overcleaning", which can affect your system by leaving it so clean that it can generate errors, such as messengers frequently disappearing messages.
 
 - Default Values ​​(And their Meanings)
   - ZIPALIGN=1296000 (Zipalign|15 days)
