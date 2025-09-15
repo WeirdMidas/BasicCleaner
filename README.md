@@ -1,13 +1,14 @@
 # BasicCleaner
+![1000003605](https://github.com/user-attachments/assets/4417246b-4029-44a2-a9a4-9cd6a1896263)
+
+### Safe and fast, efficient cleaning
 A simple module designed to be a maintenance tool for devices that want to last a little longer, but don't want to do manual things to maintain the longevity of the device.
 
 The script applies the following maintenance after 2min of boot:
 
 - fstrim every 7 days on: system, data, cache, persist, vendor, system_ext and product. 
 - clean cache and trash of apps every 7 days.
-- compile all apps in speed-profile every 7 days.
 - zipalign every 15 days.
-- vacuum, reindex, analyze and optimize the database every 15 days.
 - synchronize the art, compile the images, the final cleanup of unused files from the ART and a background recompilation of the apps is also applied to make everything more robust every 30 days.
 
 If you want logs, just go to the android folder in the main storage. It will show all the cleanings applied, the time it took between them, etc.
@@ -20,10 +21,8 @@ The module has now been updated and you can customize the cleaning period for ea
 
 - Default Values ​​(And their Meanings)
   - ZIPALIGN=1296000 (Zipalign|15 days)
-  - SQLITE=1296000 (Database|15 days)
   - JUNK=604800 (Cache and Junk of apps|7 days)
   - FSTRIM=604800 (Fstrim|7 days)
-  - ART-PROFILE=604800 (Speed-profile for user apps|7 days)
   - FINALCLEAN=2592000 (Sincronyze, compile the XML images and Clean of unused files from ART|30 days)
 
 ## WARNING!
@@ -31,4 +30,6 @@ The module also comes with the latest version of the sqlite binary, which is a m
 
 Older Androids can also suffer from the updated sqlite, so have your bootloop protection module on hand, in case something goes wrong.
 
-Another warning: The first time you install the module and in the next cleanings LET THE MODULE DO ITS WORK! DON'T DISTURB IT BY USING YOUR PHONE WHILE IT CLEANS! This prevents the script from doing something wrong and even corrupting one of your applications because of YOU! Anyway, let the module do the cleaning first, it takes almost no time and trust me, it's better because it even maximizes the cleaning.
+### Credits
+
+To the artist of the image I used for the cover; I couldn't find him here.
